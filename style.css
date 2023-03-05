@@ -1,0 +1,222 @@
+body {
+  background-color: #c7cbe4;
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  font-family: "Futura PT", sans-serif;
+  color: white;
+}
+
+.info {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 2%;
+  justify-content: space-between;
+}
+
+h2 {
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.9;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  flex: 1;
+  max-width: 50%;
+  margin-left: 10%;
+}
+
+nav navItem,
+nav button {
+  margin-left: 10px;
+}
+
+nav a {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background: linear-gradient(180deg, #ea585f 0%, #f96b7b 100%);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  position: relative;
+  max-width: 900px;
+  box-sizing: border-box;
+  max-height: 100%;
+  margin-bottom: 200px;
+}
+
+.top {
+  position: relative;
+  margin-bottom: -12%;
+  width: 103%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.header {
+  width: 100%;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  background: #ffc7a3;
+  background: linear-gradient(90deg, #d57589 0%, #ffc7a3 100%);
+  border-radius: min(5vw, 50px);
+  padding: 5%;
+  padding-top: 10%;
+  padding-bottom: 0;
+  left: 1.7%;
+  width: 94.7%;
+  box-sizing: border-box;
+}
+
+.content::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #4b0632;
+  width: 100%;
+  height: 100%;
+  transform: translate(-10%, 10%);
+  filter: blur(40px);
+  mix-blend-mode: overlay;
+  z-index: -1;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: min(3vw, 30px);
+  position: relative;
+  top: 10px;
+  z-index: 2;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  background: pink;
+  border-radius: 20px 5px 15px 15px;
+  box-shadow: -5px 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+.item::after,
+.item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
+  transform: translate(-10%, 10%);
+  filter: blur(20px);
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+}
+
+.item::after {
+  height: 100%;
+  width: 120%;
+  transform-origin: top left;
+  transform: translate(15px, 0) rotate(45deg);
+  filter: blur(5px);
+  background: linear-gradient(
+    180deg,
+    rgba(17, 59, 81, 1) 0%,
+    rgba(17, 59, 81, 0.4) 30%,
+    rgba(17, 59, 81, 0) 50%
+  );
+}
+
+.item::before {
+  transform: translate(-10%, 10%);
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  filter: blur(20px);
+}
+
+.item img {
+  width: 100%;
+  flex: 1;
+  object-fit: contain;
+}
+
+.item .label {
+  font-size: 0.7rem;
+  padding: 20px 2em;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+.item:nth-child(1) {
+  background-color: #fdf9e2;
+  background-image: linear-gradient(90deg, #ecd6d8 0%, #f9e2d2 100%);
+}
+
+.item:nth-child(2),
+.item:nth-child(7) {
+  background-color: #e4b3fa;
+  background-image: linear-gradient(90deg, #bf92f1 0%, #e4b3fa 100%);
+}
+
+.item:nth-child(3) {
+  background-color: #9fffd6;
+  background-image: linear-gradient(90deg, #69e7b7 0%, #9fffd6 100%);
+}
+
+.item:nth-child(4),
+.item:nth-child(8) {
+  background-color: #fdf5d2;
+  background-image: linear-gradient(90deg, #febea7 0%, #fdf5d2 100%);
+}
+
+.item:nth-child(5) {
+  background-color: #ff8e80;
+  background-image: linear-gradient(90deg, #fd556b 0%, #ff8e80 100%);
+}
+
+.item:nth-child(6) {
+  background-color: #ffd054;
+  background-image: linear-gradient(90deg, #f89e27 0%, #ffd054 100%);
+}
