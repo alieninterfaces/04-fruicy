@@ -1,78 +1,24 @@
 body {
   background-color: #c7cbe4;
-  overflow-x: hidden;
+  color: #fff;
+  font-family: "Futura PT", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 main {
   position: relative;
   display: flex;
-  width: 100vw;
   justify-content: center;
-  align.item-holders: center;
-  font-family: "Futura PT", sans-serif;
-  color: white;
-}
-
-.info {
-  display: flex;
-  align.item-holders: baseline;
-  margin-bottom: 2%;
-  justify-content: space-between;
-}
-
-h2 {
-  text-transform: uppercase;
-  margin: 0;
-  opacity: 0.9;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align.item-holders: center;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  flex: 1;
-  max-width: 50%;
-  margin-left: 10%;
-}
-
-nav na.item-holder,
-nav button {
-  margin-left: 10px;
-}
-
-nav a {
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-button {
-  background: linear-gradient(180deg, #ea585f 0%, #f96b7b 100%);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
-  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out;
-  text-transform: uppercase;
-}
-
-button:hover {
-  transform: scale(1.1);
+  align-items: center;
+  width: 100vw;
 }
 
 .container {
   position: relative;
   max-width: 900px;
-  box-sizing: border-box;
-  max-height: 100%;
   margin-bottom: 200px;
 }
 
@@ -80,26 +26,27 @@ button:hover {
   position: relative;
   margin-bottom: -12%;
   width: 103%;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 
 .header {
   width: 100%;
-  pointer-events: none;
 }
 
 .content {
   position: relative;
   background: #ffc7a3;
   background: linear-gradient(90deg, #d57589 0%, #ffc7a3 100%);
-  border-radius: min(5vw, 50px);
+  left: 1.8%;
+  width: 94.5%;
+  min-height: 200px;
+  border-radius: min(60px, 6vw);
   padding: 5%;
   padding-top: 10%;
   padding-bottom: 0;
-  left: 1.7%;
-  width: 94.7%;
   box-sizing: border-box;
+  box-shadow: -5px 8px 40px rgba(0, 0, 0, 0.5);
 }
 
 .content::after {
@@ -108,39 +55,74 @@ button:hover {
   position: absolute;
   top: 0;
   left: 0;
-  background: #4b0632;
   width: 100%;
   height: 100%;
+  background: #4b0032;
+  background: linear-gradient(90deg, #ee0055 0%, #4b0032 100%);
   transform: translate(-10%, 10%);
-  filter: blur(40px);
-  mix-blend-mode: overlay;
   z-index: -1;
+  filter: blur(40px);
+  mix-blend-mode: color-burn;
+  opacity: 0.5;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin-bottom: 2%;
+}
+
+h2 {
+  margin: 0;
+  opacity: 0.9;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  max-width: 50%;
+}
+
+nav a {
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav button {
+  color: white;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ea585f 0%, #f96b7b 100%);
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+nav button:hover {
+  transform: scale(1.1);
 }
 
 .grid {
   position: relative;
+  top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: min(3vw, 30px);
-  position: relative;
-  top: 10px;
 }
 
 .item-holder {
   position: relative;
   width: 100%;
-}
-
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px 5px 15px 15px;
-  box-shadow: -5px 8px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1;
 }
 
 .item-holder::after,
@@ -149,77 +131,87 @@ button:hover {
   position: absolute;
   top: 0;
   left: 0;
-  background: black;
   width: 100%;
   height: 100%;
-  display: block;
 }
 
 .item-holder::after {
-  height: 100%;
-  width: 120%;
   transform-origin: top left;
-  transform: translate(15px, 0) rotate(45deg);
-  filter: blur(5px);
-  mix-blend-mode: multiply;
+  transform: translateX(15px) rotate(45deg);
   background: linear-gradient(
     180deg,
-    rgba(17, 59, 81, 1) 0%,
-    rgba(17, 59, 81, 0.4) 30%,
-    rgba(17, 59, 81, 0) 50%
+    rgba(17, 59, 91, 1) 0%,
+    rgba(17, 59, 91, 0.4) 30%,
+    rgba(17, 59, 91, 0) 50%
   );
+  mix-blend-mode: multiply;
   opacity: 0.2;
+  filter: blur(3px);
 }
 
 .item-holder::before {
   transform: translate(-10%, 10%);
+  background: black;
   mix-blend-mode: overlay;
   filter: blur(20px);
-  z-index: 1;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
-.item-holder img {
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 20px 5px 15px 15px;
+  background: blue;
+  z-index: 1;
+}
+
+.item img {
   width: 100%;
   flex: 1;
   object-fit: contain;
 }
 
-.item-holder .label {
+.item-label {
   font-size: 0.7rem;
   padding: 20px 2em;
+  padding-top: 0;
   box-sizing: border-box;
   text-transform: uppercase;
 }
 
 .item-holder:nth-child(1) .item {
-  background-color: #fdf9e2;
-  background-image: linear-gradient(90deg, #ecd6d8 0%, #f9e2d2 100%);
+  background: linear-gradient(90deg, #ecd6d8 0%, #f9e2d2 100%);
 }
 
 .item-holder:nth-child(2) .item,
 .item-holder:nth-child(7) .item {
-  background-color: #e4b3fa;
-  background-image: linear-gradient(90deg, #bf92f1 0%, #e4b3fa 100%);
+  background: linear-gradient(90deg, #bf92f1 0%, #e4b3fa 100%);
 }
 
 .item-holder:nth-child(3) .item {
-  background-color: #9fffd6;
-  background-image: linear-gradient(90deg, #69e7b7 0%, #9fffd6 100%);
+  background: linear-gradient(90deg, #69e7b7 0%, #9fffd6 100%);
 }
 
 .item-holder:nth-child(4) .item,
 .item-holder:nth-child(8) .item {
-  background-color: #fdf5d2;
-  background-image: linear-gradient(90deg, #febea7 0%, #fdf5d2 100%);
+  background: linear-gradient(90deg, #febea7 0%, #fdf5d2 100%);
 }
 
 .item-holder:nth-child(5) .item {
-  background-color: #ff8e80;
-  background-image: linear-gradient(90deg, #fd556b 0%, #ff8e80 100%);
+  background: linear-gradient(90deg, #fd556b 0%, #ff8e80 100%);
 }
 
 .item-holder:nth-child(6) .item {
-  background-color: #ffd054;
-  background-image: linear-gradient(90deg, #f89e27 0%, #ffd054 100%);
+  background: linear-gradient(90deg, #f89e27 0%, #ffd054 100%);
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
