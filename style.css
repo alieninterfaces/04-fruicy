@@ -38,8 +38,8 @@ main {
   position: relative;
   background: #ffc7a3;
   background: linear-gradient(90deg, #d57589 0%, #ffc7a3 100%);
-  left: 1.8%;
-  width: 94.5%;
+  left: 1.6%;
+  width: 94.8%;
   min-height: 200px;
   border-radius: min(60px, 6vw);
   padding: 5%;
