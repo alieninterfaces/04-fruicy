@@ -8,14 +8,14 @@ main {
   display: flex;
   width: 100vw;
   justify-content: center;
-  align-items: center;
+  align.item-holders: center;
   font-family: "Futura PT", sans-serif;
   color: white;
 }
 
 .info {
   display: flex;
-  align-items: baseline;
+  align.item-holders: baseline;
   margin-bottom: 2%;
   justify-content: space-between;
 }
@@ -29,7 +29,7 @@ h2 {
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align.item-holders: center;
   font-size: 0.8rem;
   text-transform: uppercase;
   flex: 1;
@@ -37,7 +37,7 @@ nav {
   margin-left: 10%;
 }
 
-nav navItem,
+nav na.item-holder,
 nav button {
   margin-left: 10px;
 }
@@ -124,7 +124,11 @@ button:hover {
   gap: min(3vw, 30px);
   position: relative;
   top: 10px;
-  z-index: 2;
+}
+
+.item-holder {
+  position: relative;
+  width: 100%;
 }
 
 .item {
@@ -133,13 +137,14 @@ button:hover {
   justify-content: space-between;
   position: relative;
   width: 100%;
-  background: pink;
+  height: 100%;
   border-radius: 20px 5px 15px 15px;
-  box-shadow: -5px 8px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: -5px 8px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-.item::after,
-.item::before {
+.item-holder::after,
+.item-holder::before {
   content: "";
   position: absolute;
   top: 0;
@@ -148,75 +153,73 @@ button:hover {
   width: 100%;
   height: 100%;
   display: block;
-  z-index: -1;
-  transform: translate(-10%, 10%);
-  filter: blur(20px);
-  opacity: 0.3;
-  mix-blend-mode: multiply;
 }
 
-.item::after {
+.item-holder::after {
   height: 100%;
   width: 120%;
   transform-origin: top left;
   transform: translate(15px, 0) rotate(45deg);
   filter: blur(5px);
+  mix-blend-mode: multiply;
   background: linear-gradient(
     180deg,
     rgba(17, 59, 81, 1) 0%,
     rgba(17, 59, 81, 0.4) 30%,
     rgba(17, 59, 81, 0) 50%
   );
+  opacity: 0.2;
 }
 
-.item::before {
+.item-holder::before {
   transform: translate(-10%, 10%);
-  opacity: 0.5;
   mix-blend-mode: overlay;
   filter: blur(20px);
+  z-index: 1;
+  opacity: 0.8;
 }
 
-.item img {
+.item-holder img {
   width: 100%;
   flex: 1;
   object-fit: contain;
 }
 
-.item .label {
+.item-holder .label {
   font-size: 0.7rem;
   padding: 20px 2em;
   box-sizing: border-box;
   text-transform: uppercase;
 }
 
-.item:nth-child(1) {
+.item-holder:nth-child(1) .item {
   background-color: #fdf9e2;
   background-image: linear-gradient(90deg, #ecd6d8 0%, #f9e2d2 100%);
 }
 
-.item:nth-child(2),
-.item:nth-child(7) {
+.item-holder:nth-child(2) .item,
+.item-holder:nth-child(7) .item {
   background-color: #e4b3fa;
   background-image: linear-gradient(90deg, #bf92f1 0%, #e4b3fa 100%);
 }
 
-.item:nth-child(3) {
+.item-holder:nth-child(3) .item {
   background-color: #9fffd6;
   background-image: linear-gradient(90deg, #69e7b7 0%, #9fffd6 100%);
 }
 
-.item:nth-child(4),
-.item:nth-child(8) {
+.item-holder:nth-child(4) .item,
+.item-holder:nth-child(8) .item {
   background-color: #fdf5d2;
   background-image: linear-gradient(90deg, #febea7 0%, #fdf5d2 100%);
 }
 
-.item:nth-child(5) {
+.item-holder:nth-child(5) .item {
   background-color: #ff8e80;
   background-image: linear-gradient(90deg, #fd556b 0%, #ff8e80 100%);
 }
 
-.item:nth-child(6) {
+.item-holder:nth-child(6) .item {
   background-color: #ffd054;
   background-image: linear-gradient(90deg, #f89e27 0%, #ffd054 100%);
 }
