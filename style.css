@@ -1,15 +1,14 @@
 body {
   background-color: #c7cbe4;
-  color: #fff;
   font-family: "Futura PT", sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
 
 main {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,15 +16,12 @@ main {
 }
 
 .container {
-  position: relative;
   max-width: 900px;
-  margin-bottom: 200px;
 }
 
 .top {
   position: relative;
   margin-bottom: -12%;
-  width: 103%;
   z-index: 1;
   pointer-events: none;
 }
@@ -38,9 +34,9 @@ main {
   position: relative;
   background: #ffc7a3;
   background: linear-gradient(90deg, #d57589 0%, #ffc7a3 100%);
-  left: 1.6%;
-  width: 94.8%;
   min-height: 200px;
+  left: 1.6%;
+  width: 91.8%;
   border-radius: min(60px, 6vw);
   padding: 5%;
   padding-top: 10%;
@@ -50,20 +46,18 @@ main {
 }
 
 .content::after {
-  display: block;
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #4b0032;
   background: linear-gradient(90deg, #ee0055 0%, #4b0032 100%);
   transform: translate(-10%, 10%);
-  z-index: -1;
-  filter: blur(40px);
   mix-blend-mode: color-burn;
   opacity: 0.5;
+  filter: blur(40px);
+  z-index: -1;
 }
 
 .info {
@@ -74,8 +68,8 @@ main {
 }
 
 h2 {
-  margin: 0;
   opacity: 0.9;
+  margin: 0;
 }
 
 nav {
@@ -87,28 +81,29 @@ nav {
 }
 
 nav a {
-  font-weight: 700;
   color: #fff;
   text-decoration: none;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
-nav button {
+button {
   color: white;
   text-transform: uppercase;
-  background: linear-gradient(180deg, #ea585f 0%, #f96b7b 100%);
   padding: 10px 20px;
-  border: 0;
+  border: none;
   border-radius: 20px;
+  background: linear-gradient(180deg, #ea585f 0%, #f96b7b 100%);
   box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-out;
 }
 
-nav button:hover {
+button:hover {
   transform: scale(1.1);
 }
 
@@ -117,7 +112,7 @@ nav button:hover {
   top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: min(3vw, 30px);
+  grid-gap: min(3vw, 30px);
 }
 
 .item-holder {
@@ -125,9 +120,10 @@ nav button:hover {
   width: 100%;
 }
 
-.item-holder::after,
-.item-holder::before {
+.item-holder::before,
+.item-holder::after {
   content: "";
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -137,12 +133,12 @@ nav button:hover {
 
 .item-holder::after {
   transform-origin: top left;
-  transform: translateX(15px) rotate(45deg);
+  transform: translate(13px) rotate(45deg);
   background: linear-gradient(
     180deg,
     rgba(17, 59, 91, 1) 0%,
     rgba(17, 59, 91, 0.4) 30%,
-    rgba(17, 59, 91, 0) 50%
+    rgba(17, 59, 91, 0) 100%
   );
   mix-blend-mode: multiply;
   opacity: 0.2;
@@ -153,8 +149,8 @@ nav button:hover {
   transform: translate(-10%, 10%);
   background: black;
   mix-blend-mode: overlay;
-  filter: blur(20px);
   opacity: 0.5;
+  filter: blur(20px);
 }
 
 .item {
@@ -162,11 +158,10 @@ nav button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: blue;
   width: 100%;
   height: 100%;
-  box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.3);
   border-radius: 20px 5px 15px 15px;
-  background: blue;
   z-index: 1;
 }
 
@@ -210,7 +205,7 @@ nav button:hover {
   background: linear-gradient(90deg, #f89e27 0%, #ffd054 100%);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
